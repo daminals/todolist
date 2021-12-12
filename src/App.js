@@ -36,15 +36,20 @@ function App() {
     setTodos(newTodos)
   }
 
+  function handleClearTodos () {
+    const newTodos = todos.filter(todo => !todo.complete)
+    setTodos(newTodos)
+  }
+
   return ( 
     <> {/* wrap return in empty <> so that i only return one */}
     <input ref={todoNameRef} type="text" />
     <button onClick={handleAddTodo}>add todo</button>
-    <button>clear completed</button>
-    <div> 0 left to do lol </div>
+    <button onClick={handleClearTodos}>clear completed</button>
+    <div> {todos.filter(todo => !todo.complete).length} left to do lol </div>
     <br></br>
 
-    <TodoList todos={todos} /> {/* // i can basically create my own component, so now todo list.js */}
+    <TodoList todos={todos} toggleTodo={toggleTodo} /> {/* // i can basically create my own component, so now todo list.js */}
     </>
   );
 }
