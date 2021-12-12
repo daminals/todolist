@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState, useRef, useEffect }  from 'react'; // react manages state, not app, and i want to store todos to render
 import TodoList from './TodoList';
