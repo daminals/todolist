@@ -28,7 +28,7 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
   }, [todos])
 
-  function toggleTodo(id) {
+  function toggleTdo(id) {
     const newTodos = [...todos] // in react, always make a copy before modifying state variable
     const todo = newTodos.find(todo => todo.id === id)
     todo.complete = !todo.complete
